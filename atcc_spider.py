@@ -6,6 +6,7 @@ from items import atcc_scraper_item
 
 DL_PRODUCT_INFORMATION_LIST = 'dl.product-information__list'
 DL_PRODUCT_DETAILED_INFORMATION_LIST = 'div.generic-accordion__items'
+NOW = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
 
 
 class atcc_spider(scrapy.Spider):
@@ -13,8 +14,9 @@ class atcc_spider(scrapy.Spider):
 
     custom_settings = {
         'DOWNLOAD_DELAY': 2.5,
-        'LOG_FILE': 'log/ATCC.log',
+        'LOG_FILE': 'logs/ATCC_{NOW}.log'.format(NOW=NOW),
         'LOG_ENABLED': True,
+        'LOG_FILE_APPEND': False,
         'LOG_LEVEL': 'INFO',
         'LOG_STDOUT': True
     }
