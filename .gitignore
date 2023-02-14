@@ -108,6 +108,6 @@ dmypy.json
 .pyre/
 .pytype/
 cython_debug/
-data/*
-output/*
-log/*
+*csv
+*xlsx
+*log
